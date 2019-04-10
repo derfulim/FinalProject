@@ -1,5 +1,5 @@
 package ua.training.model.entity;
 
 public enum Role {
-    ADMIN,USER,GUEST
+    MODERATOR,SPEAKER,VISITOR,UNKNOWN
 }

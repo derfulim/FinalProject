@@ -80,8 +80,7 @@
 
 </head>
 <body class="text-center">
-<form class="form-signin">
-    <jsp:text>${pageContext.request.contextPath} </jsp:text>
+<form class="form-signin" method="post" action="${pageContext.request.contextPath}/registration">
     <h1 class="h3 mb-3 font-weight-normal"><fmt:message key="message.login.request"/></h1>
     <label for="inputEmail" class="sr-only"><fmt:message key="message.login.login"/></label>
     <input type="login" id="inputEmail" class="form-control" placeholder=<fmt:message key="message.login.login"/> required autofocus>
