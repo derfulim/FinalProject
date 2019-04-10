@@ -8,16 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>User cabinet</title>
+    <title>Admin name</title>
 </head>
 <body>
-<h1>Hello user name</h1><br>
-<pre>
-My conferences:
-Offer a lecture:
-My rating:
-My bonus:
-</pre>
+    My conferences
+    My rating
+    Speaker's rating
 
 </body>
 </html>

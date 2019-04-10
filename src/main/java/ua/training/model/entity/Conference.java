@@ -10,19 +10,26 @@ public class Conference {
     private String placeUa;
     private String placeEng;
     private LocalDateTime date;
-    private List<User> users;
+    private List<User> participants;
     private List<Lecture> lectures;
 
-    public Conference(int id, String nameUa, String nameEng, String placeUa, String placeEng, LocalDateTime date, List<User>users, List<Lecture> lectures) {
-        this.id = id;
-        this.nameUa = nameUa;
-        this.nameEng = nameEng;
-        this.placeUa = placeUa;
-        this.placeEng = placeEng;
-        this.date = date;
-        this.users = users;
-        this.lectures = lectures;
+    //TODO create opportunity to change quantity available seats and lectures
+
+    //todo implement equals and hashcode
+
+    public Conference() {
     }
+
+//    public Conference(int id, String nameUa, String nameEng, String placeUa, String placeEng, LocalDateTime date, List<User>participants, List<Lecture> lectures) {
+//        this.id = id;
+//        this.nameUa = nameUa;
+//        this.nameEng = nameEng;
+//        this.placeUa = placeUa;
+//        this.placeEng = placeEng;
+//        this.date = date;
+//        this.participants = participants;
+//        this.lectures = lectures;
+//    }
 
     public int getId() {
         return id;
@@ -72,12 +79,12 @@ public class Conference {
         this.date = date;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public List<User> getParticipants() {
+        return participants;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setParticipants(List<User> participants) {
+        this.participants = participants;
     }
 
     public List<Lecture> getLectures() {

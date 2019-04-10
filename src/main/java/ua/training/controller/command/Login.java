@@ -1,16 +1,61 @@
 package ua.training.controller.command;
 
+import ua.training.model.service.UserService;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class Login implements Command {
+
+//    private Map<String, String> pages = new HashMap<>();
+//    private UserService userService;
+//
+//    public Login(UserService userService) {
+//        this.userService = userService;
+//
+//        pages.put("login", "/login.jsp");
+//        pages.put("MODERATOR", "redirect:moderator");
+//        pages.put("SPEAKER", "redirect:speaker");
+//        pages.put("VISITOR", "redirect:visitor");
+//    }
+
     @Override
     public String execute(HttpServletRequest request) {
-        String name = request.getParameter("name");
+        //TODO use Optional
+        String login = request.getParameter("login");
         String pass = request.getParameter("pass");
-        System.out.println(name + " " + pass);
-        if( name == null || name.equals("") || pass == null || pass.equals("")  ){
-            return "/login.jsp";
+//        System.out.println(login + " " + pass);
+
+        UserService userService = new UserService();
+        System.out.println(userService.login("mychay"));
+
+
+        if( login == null || login.equals("") || pass == null || pass.equals("")  ){
+                    return "/login.jsp";
         }
+
         return "/login.jsp";
     }
+
+//    public String execute(HttpServletRequest request) {
+//        String email = request.getParameter("email");
+//        String pass = request.getParameter("password");
+//
+//        if (email == null || email.equals("") || pass == null || pass.equals("")) {
+//            return "/login.jsp";
+//        }
+//
+//        Optional<User> user = userService.login(email);
+//
+//
+//        if (user.isPresent() && pass.equals(user.get().getPassword())) {
+//
+//            if(CommandUtility.cannotLogUser(request, user.get().getEmail(), user.get().getRole())){
+//                return "/WEB-INF/error.jsp";
+//            }
+//
+//            return pages.getOrDefault(user.get().getRole().name(), pages.get("login"));
+//        }
+//
+//        return "/login.jsp";
+//    }
 }

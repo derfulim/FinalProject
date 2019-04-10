@@ -1,9 +1,6 @@
 package ua.training.controller.servlet;
 
-import ua.training.controller.command.Command;
-import ua.training.controller.command.LogOut;
-import ua.training.controller.command.Login;
-import ua.training.controller.command.Registration;
+import ua.training.controller.command.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +17,8 @@ public class Servlet extends HttpServlet {
         commands.put("logout", new LogOut());
         commands.put("login", new Login());
         commands.put("registration", new Registration());
+        commands.put("futureconferences", new FutureConferences());
+        commands.put("pastconferences", new PastConferences());
      }
 
     public void doGet(HttpServletRequest request,
@@ -38,13 +37,13 @@ public class Servlet extends HttpServlet {
 
         String path = request.getRequestURI();
         System.out.println(path);
-        path = path.replaceAll(".*/app/" , "");
+        path = path.replaceAll(".*/confmansys/" , "");
         System.out.println(path);
         Command command = commands.getOrDefault(path ,
-                (r)->"/index.jsp)");
+                (r)->"/index.jsp");
         String page = command.execute(request);
         if(page.contains("redirect")){
-            response.sendRedirect(page.replace("redirect:", "/FinalProject_war_exploded"));
+            response.sendRedirect(page.replace("redirect:", "/confmansys"));
         }else {
             request.getRequestDispatcher(page).forward(request, response);
         }

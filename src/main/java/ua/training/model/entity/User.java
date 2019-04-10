@@ -11,8 +11,13 @@ public class User {
     private String nameEng;
     private String surnameUa;
     private String surnameEng;
+    private String email;
+    private String password;
 
     List<Conference> conferences;
+
+    public User() {
+    }
 
     public User(int id, String login, int passHash, String role, String nameUa, String nameEng, String surnameUa, String surnameEng, List<Conference> conferences) {
         this.id = id;
@@ -44,6 +49,10 @@ public class User {
 
     public int getPassHash() {
         return passHash;
+    }
+
+    public void setPassHash(int passHash) {
+        this.passHash = passHash;
     }
 
     public String getRole() {
@@ -92,6 +101,22 @@ public class User {
 
     public void setConferences(List<Conference> conferences) {
         this.conferences = conferences;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

@@ -1,5 +1,6 @@
 package ua.training.model.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Speaker extends User{
@@ -7,10 +8,10 @@ public class Speaker extends User{
     private Lecture lecture;
     private int bonus;
 
-    public Speaker(int id, String login, int passHash, String role, String nameUa, String nameEng, String surnameUa, String surnameEng, List<Conference> conferences, int rating, Lecture lecture, int bonus) {
+    public Speaker(int id, String login, int passHash, String role, String nameUa, String nameEng, String surnameUa, String surnameEng, List<Conference> conferences, int rating, int bonus) {
         super(id, login, passHash, role, nameUa, nameEng, surnameUa, surnameEng, conferences);
         this.rating = rating;
-        this.lecture = lecture;
+//        this.lecture = lecture;
         this.bonus = bonus;
     }
 
@@ -37,6 +38,7 @@ public class Speaker extends User{
     public void setBonus(int bonus) {
         this.bonus = bonus;
     }
+
 
     @Override
     public String toString() {//TODO

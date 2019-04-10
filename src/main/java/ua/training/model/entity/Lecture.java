@@ -6,12 +6,12 @@ public class Lecture {
     private String nameEng;
     private Conference conference;
 
-    public Lecture(int id, String nameUa, String nameEng, Conference conference) {
-        this.id = id;
-        this.nameUa = nameUa;
-        this.nameEng = nameEng;
-        this.conference = conference;
-    }
+//    public Lecture(int id, String nameUa, String nameEng, Conference conference) {
+//        this.id = id;
+//        this.nameUa = nameUa;
+//        this.nameEng = nameEng;
+//        this.conference = conference;
+//    }
 
     public int getId() {
         return id;
