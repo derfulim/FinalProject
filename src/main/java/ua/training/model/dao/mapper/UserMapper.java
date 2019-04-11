@@ -14,6 +14,7 @@ public class UserMapper implements ObjectMapper<User>{
         User user = new User();
 
         user.setId(rs.getInt("user_id"));
+        user.setLogin(rs.getString("login"));
         user.setNameUa(rs.getString("user_name_ua"));
         user.setNameEng(rs.getString("user_name_eng"));
         user.setSurnameUa(rs.getString("user_surname_ua"));
@@ -21,8 +22,8 @@ public class UserMapper implements ObjectMapper<User>{
         user.setEmail(rs.getString("user_email"));
 //        user.setPassHash(Integer.valueOf(rs.getString("password")));  //TODO решить как хранить пароль
         user.setPassword(rs.getString("user_password"));
-//        user.setRole(Role.valueOf(rs.getString("role")));
-        user.setRole(rs.getString("role"));
+        user.setRole(Role.valueOf(rs.getString("role2")));
+//        user.setRole(rs.getString("role"));
 
         return user;
     }

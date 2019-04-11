@@ -80,12 +80,12 @@
 
 </head>
 <body class="text-center">
-<form class="form-signin" method="post" action="${pageContext.request.contextPath}/registration">
+<form class="form-signin" method="post" action="${pageContext.request.contextPath}/login">
     <h1 class="h3 mb-3 font-weight-normal"><fmt:message key="message.login.request"/></h1>
-    <label for="inputEmail" class="sr-only"><fmt:message key="message.login.login"/></label>
-    <input type="login" id="inputEmail" class="form-control" placeholder=<fmt:message key="message.login.login"/> required autofocus>
-    <label for="inputPassword" class="sr-only"><fmt:message key="message.login.password"/></label>
-    <input type="password" id="inputPassword" class="form-control" placeholder=<fmt:message key="message.login.password"/> required>
+    <label for="login" class="sr-only"><fmt:message key="message.login.login"/></label>
+    <input type="text" id="login" name="login" class="form-control" placeholder=<fmt:message key="message.login.login"/> required autofocus>
+    <label for="password" class="sr-only"><fmt:message key="message.login.password"/></label>
+    <input type="password" id="password" name="password" class="form-control" placeholder=<fmt:message key="message.login.password"/> required>
     <div class="checkbox mb-3">
         <label>
             <input type="checkbox" value="remember-me"> <fmt:message key ="message.login.remember"/>

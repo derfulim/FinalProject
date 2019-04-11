@@ -6,7 +6,7 @@ public class User {
     private int id;
     private String login;
     private int passHash; //to think about this field
-    private String role;
+    private Role role;
     private String nameUa;
     private String nameEng;
     private String surnameUa;
@@ -19,17 +19,17 @@ public class User {
     public User() {
     }
 
-    public User(int id, String login, int passHash, String role, String nameUa, String nameEng, String surnameUa, String surnameEng, List<Conference> conferences) {
-        this.id = id;
-        this.login = login;
-        this.passHash= passHash;
-        this.role = role;
-        this.nameUa = nameUa;
-        this.nameEng = nameEng;
-        this.surnameUa = surnameUa;
-        this.surnameEng = surnameEng;
-        this.conferences = conferences;
-    }
+//    public User(int id, String login, int passHash, String role, String nameUa, String nameEng, String surnameUa, String surnameEng, List<Conference> conferences) {
+//        this.id = id;
+//        this.login = login;
+//        this.passHash= passHash;
+//        this.role = role;
+//        this.nameUa = nameUa;
+//        this.nameEng = nameEng;
+//        this.surnameUa = surnameUa;
+//        this.surnameEng = surnameEng;
+//        this.conferences = conferences;
+//    }
 
     public int getId() {
         return id;
@@ -55,11 +55,11 @@ public class User {
         this.passHash = passHash;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 

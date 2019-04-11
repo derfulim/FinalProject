@@ -1,6 +1,7 @@
 package ua.training.controller.servlet;
 
 import ua.training.controller.command.*;
+import ua.training.model.service.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,11 +12,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Servlet extends HttpServlet {
+
     private Map<String, Command> commands = new HashMap<>();
 
     public void init(){
         commands.put("logout", new LogOut());
-        commands.put("login", new Login());
+        commands.put("login", new Login(new UserService()));
+        commands.put("moderator", new Moderator());
         commands.put("registration", new Registration());
         commands.put("futureconferences", new FutureConferences());
         commands.put("pastconferences", new PastConferences());
