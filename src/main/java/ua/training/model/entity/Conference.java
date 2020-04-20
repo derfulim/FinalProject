@@ -12,8 +12,16 @@ public class Conference {
     private LocalDateTime date;
     private List<User> participants;
     private List<Lecture> lectures;
+    private int sits;
 
-    //TODO create opportunity to change quantity available seats and lectures
+    public int getSits() {
+        return sits;
+    }
+
+    public void setSits(int sits) {
+        this.sits = sits;
+    }
+//TODO create opportunity to change quantity available seats and lectures
 
     //todo implement equals and hashcode
 

@@ -5,7 +5,15 @@ public class Lecture {
     private String nameUa;
     private String nameEng;
     private Conference conference;
+    private Speaker speaker;
 
+    public Speaker getSpeaker() {
+        return speaker;
+    }
+
+    public void setSpeaker(Speaker speaker) {
+        this.speaker = speaker;
+    }
 //    public Lecture(int id, String nameUa, String nameEng, Conference conference) {
 //        this.id = id;
 //        this.nameUa = nameUa;

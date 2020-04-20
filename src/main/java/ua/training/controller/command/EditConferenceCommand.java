@@ -2,9 +2,9 @@ package ua.training.controller.command;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class Moderator implements Command {
+public class EditConferenceCommand implements Command {
     @Override
     public String execute(HttpServletRequest request) {
-        return "WEB-INF/moderator/home.jsp";
+        return "moderator/editconference.jsp";
     }
 }

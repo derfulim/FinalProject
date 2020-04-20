@@ -1,7 +1,9 @@
 package ua.training.controller.servlet;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ua.training.controller.command.*;
-import ua.training.model.service.UserService;
+import ua.training.model.entity.DBEmulator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,16 +15,20 @@ import java.util.Map;
 
 public class Servlet extends HttpServlet {
 
+    private static final Logger LOGGER = LogManager.getLogger(Login.class);
     private Map<String, Command> commands = new HashMap<>();
 
-    public void init(){
+    public void init() {
+        DBEmulator.init();
+
+        LOGGER.info("Initialization of the servlet");
         commands.put("logout", new LogOut());
-        commands.put("login", new Login(new UserService()));
-        commands.put("moderator", new Moderator());
-        commands.put("registration", new Registration());
-        commands.put("futureconferences", new FutureConferences());
-        commands.put("pastconferences", new PastConferences());
-     }
+        commands.put("login", new Login());
+        commands.put("registration", new RegistrationCommand());
+        commands.put("redirect_registration", new RedirectRegistrationCommand());
+        commands.put("redirect_login", new RedirectLoginCommand());
+        commands.put("moderator_main", new RedirectToModeratorMainCommand());
+    }
 
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
@@ -35,19 +41,24 @@ public class Servlet extends HttpServlet {
         processRequest(request, response);
     }
 
+
     private void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+
         String path = request.getRequestURI();
-        System.out.println(path);
-        path = path.replaceAll(".*/confmansys/" , "");
-        System.out.println(path);
-        Command command = commands.getOrDefault(path ,
-                (r)->"/index.jsp");
+        LOGGER.info("Received path is " + path);
+        path = path.replaceAll(".*/confmansys/", "");
+        LOGGER.info("Replaced path is " + path);
+
+        Command command = commands.getOrDefault(path,
+                (r) -> "/index.jsp");
         String page = command.execute(request);
-        if(page.contains("redirect")){
-            response.sendRedirect(page.replace("redirect:", "/confmansys"));
-        }else {
+        if (page.contains("redirect")) {
+            LOGGER.info("Page was redirected");
+            response.sendRedirect(page.replace("redirect:", "/confmansys/"));
+        } else {
+            LOGGER.info("Page was forwarded");
             request.getRequestDispatcher(page).forward(request, response);
         }
     }

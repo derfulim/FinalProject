@@ -1,19 +1,17 @@
 <%--
   Created by IntelliJ IDEA.
   User: User
-  Date: 29.03.2019
-  Time: 1:15
+  Date: 30.03.2020
+  Time: 20:24
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Moderator name</title>
+    Contacts
+    About
 </head>
 <body>
-    My conferences
-    My rating
-    Speaker's rating
 
 </body>
 </html>

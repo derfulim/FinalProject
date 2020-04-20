@@ -1,4 +1,4 @@
 package ua.training.model.service;
 
-public interface UserService {
+public interface UserValidation {
 }

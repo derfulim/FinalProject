@@ -1,0 +1,40 @@
+ul {
+    font-weight: bolder;
+    font-size: larger;
+    width: 100vw;
+    background-color: #B9AC8E;
+    padding: 2% 0%;
+}
+
+li {
+    display: inline;
+    padding: 1%;
+    margin: 0% 1% 0% 0%;
+}
+
+li.home {
+    margin: 0% 50% 0% 1%;
+}
+
+li a {
+    color: black;
+    text-decoration: none
+}
+
+li a:hover {
+    color: whitesmoke;
+}
+
+
+select {
+    background-color: #B9AC8E;
+    font: inherit;
+}
+
+option {
+    font: inherit;
+}
+
+
+
+
